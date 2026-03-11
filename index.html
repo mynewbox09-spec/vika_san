@@ -1,58 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
 <meta charset="UTF-8">
 <title>Оплата</title>
 
 <style>
 body{
-font-family:Arial;
-background:#f2f2f2;
-text-align:center;
-padding:40px;
+font-family: Arial;
+background: linear-gradient(135deg,#6a11cb,#2575fc);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:0;
 }
 
-.box{
+.card{
 background:white;
-padding:30px;
-max-width:350px;
-margin:auto;
-border-radius:12px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+padding:40px;
+border-radius:15px;
+text-align:center;
+width:400px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h1{
+margin-bottom:20px;
+}
+
+.info{
+margin:10px 0;
+font-size:16px;
+text-align:left;
 }
 
 button{
-padding:12px 20px;
 margin-top:15px;
+padding:12px 20px;
+border:none;
+border-radius:8px;
+background:#2575fc;
+color:white;
 font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1a5edb;
+}
+
+.link{
+display:block;
+margin-top:15px;
+text-decoration:none;
+color:#2575fc;
+font-weight:bold;
+text-align:center;
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="box">
+<div class="card">
 
-<h2>Оплата</h2>
+<h1>Оплата</h1>
 
-<p><b>IBAN:</b></p>
+<div class="info"><b>Банк отримувача:</b> АТ "Райффайзен Банк"</div>
+<div class="info"><b>Отримувач:</b> ТКАЧУК ВІКТОРІЯ МИКОЛАЇВНА</div>
+<div class="info"><b>Код ЄДРПОУ:</b> 3387303207</div>
+<div class="info"><b>Картковий рахунок / IBAN:</b>  
+<span id="iban">UA34 3003 3500 0000 0260 0224 00311</span>
+</div>
+<div class="info"><b>Призначення платежу:</b> оплата за товар, сток</div>
 
-<p id="iban">UA000000000000000000000</p>
+<button onclick="copyIBAN()">Скопіювати IBAN</button>
 
-<button onclick="copy()">Скопіювати IBAN</button>
+<a class="link" href="viber://chat?number=%2B380937632798">Написати у Viber</a>
+
+<div class="info" style="margin-top:20px; font-weight:bold;">
+Після оплати надішліть квитанцію та адресу.
+</div>
 
 </div>
 
 <script>
-
-function copy(){
-navigator.clipboard.writeText(
-document.getElementById("iban").innerText
-);
+function copyIBAN(){
+var text=document.getElementById("iban").innerText;
+navigator.clipboard.writeText(text);
 alert("IBAN скопійовано");
 }
-
 </script>
 
 </body>
