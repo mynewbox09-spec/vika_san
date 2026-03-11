@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Оплата</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f2f2f2;
+text-align:center;
+padding:40px;
+}
+
+.box{
+background:white;
+padding:30px;
+max-width:350px;
+margin:auto;
+border-radius:12px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+button{
+padding:12px 20px;
+margin-top:15px;
+font-size:16px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Оплата</h2>
+
+<p><b>IBAN:</b></p>
+
+<p id="iban">UA000000000000000000000</p>
+
+<button onclick="copy()">Скопіювати IBAN</button>
+
+</div>
+
+<script>
+
+function copy(){
+navigator.clipboard.writeText(
+document.getElementById("iban").innerText
+);
+alert("IBAN скопійовано");
+}
+
+</script>
+
+</body>
+</html>
